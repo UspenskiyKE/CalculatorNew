@@ -3,7 +3,7 @@ package com.flightofdream.CalculatorNew;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CalculatorNewServiceImpl implements CalculatorNewService{
+public class CalculatorNewServiceImpl implements CalculatorNewService {
 
     public String calcHello() {
         return  "<h1 align=\"center\">Добро пожаловать в калькулятор!</h1>";
@@ -25,9 +25,10 @@ public class CalculatorNewServiceImpl implements CalculatorNewService{
     }
 
     public double calcDivide(double num1, double num2) {
-        double result = num1 / num2;
-        return  result;
-
+        if(num2!=0){
+            double result = num1 / num2;
+            return  result;}else{
+            throw new DivisionByZeroException("Division By Zero Error!");
+        }
     }
-
 }

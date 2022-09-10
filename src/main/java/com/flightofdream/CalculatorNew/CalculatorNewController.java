@@ -39,13 +39,8 @@ public class CalculatorNewController {
 
     @GetMapping(path="/divide")
     public String calcDivide(@RequestParam("num1") int userNum1,@RequestParam("num2") int userNum2) {
-        if (userNum2!=0) {
-            double r=calculatorService.calcDivide(userNum1,userNum2);
-            return userNum1+" / "+userNum2+" = "+r;
-        }else{
-            return "<b>Ошибка:</b> Деление на ноль!";
-        }
-
+        double r=calculatorService.calcDivide(userNum1,userNum2);
+        return userNum1+" / "+userNum2+" = "+r;
     }
 }
 
